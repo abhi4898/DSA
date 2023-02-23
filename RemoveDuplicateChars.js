@@ -16,7 +16,6 @@ Please test out ALL expamples given above.
 
 
 function removeChar(uIp, num){
-
     let strlist = uIp.split('')
     let slowPointer = 0;
     let fastPointer = 0;
