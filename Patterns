@@ -1,0 +1,20 @@
+/*
+  
+  * * * *
+  * * * *
+  * * * *
+  * * * *
+
+*/
+
+
+let str = ''
+let rows = 4
+for(let i=0; i<rows; i++){
+    for(let j=0; j<rows; j++){
+        str += '* '
+    }
+    str += '\n'
+}
+
+console.log(str)
