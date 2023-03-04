@@ -9,9 +9,9 @@
 function leftAngleTringleWithNumbers(rows){
     let str = ''
 
-    for(let i=0; i<rows; i++){
-        for(let j=0; j<=i; j++){
-            str += `${j+1} `
+    for(let i=1; i<rows; i++){
+        for(let j=1; j<=i; j++){
+            str += j + ' '
         }
         str += '\n'
     }
