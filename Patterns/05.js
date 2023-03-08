@@ -9,7 +9,7 @@
 */
 
 function invertedRightAngledTriangle(rows) {
-  str = "";
+  let str = "";
   for (let i = rows; i > 0; i--) {
     for (let j = 0; j < i; j++) {
       str += "* ";
