@@ -8,11 +8,15 @@
 
 */
 
-str = ''
-for(let i=5; i>0;i--){
-    for(let j=0; j<i; j++){
-        str += '* '
+function invertedRightAngledTriangle(rows) {
+  str = "";
+  for (let i = rows; i > 0; i--) {
+    for (let j = 0; j < i; j++) {
+      str += "* ";
     }
-    str +='\n'
+    str += "\n";
+  }
+  return str;
 }
-console.log(str)
+
+console.log(invertedRightAngledTriangle(5));

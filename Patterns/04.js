@@ -8,16 +8,16 @@
 
 */
 
-function leftAngleTringleWithNumbersOfi(rows){
-    let str = ''
+function leftAngleTringleWithNumbersOfi(rows) {
+  let str = "";
 
-    for(let i=1; i<=rows; i++){
-        for(let j=1; j<=i; j++){
-            str += i + ' '
-        }
-        str += '\n'
+  for (let i = 1; i <= rows; i++) {
+    for (let j = 1; j <= i; j++) {
+      str += i + " ";
     }
-    return str
+    str += "\n";
+  }
+  return str;
 }
 
-console.log(leftAngleTringleWithNumbersOfi(5))
+console.log(leftAngleTringleWithNumbersOfi(5));
