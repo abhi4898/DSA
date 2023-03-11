@@ -9,23 +9,18 @@
 */
 
 function binaryNumbersRightAngledTriangle(rows) {
-    let str = ''
-    for (let i = 0; i < rows; i++) {
-        if (i%2==0) {
-            str += '1 '
-        }else {
-            str += '0 '
-        }
-        for (let j = 1; j <= i; j++) {
-            if (j%2==0 && i%2==0) {
-                str += '0 '
-            }else {
-                str += '1 '
-            }
-        }
-        str += '\n'
+  let str = "";
+  let bin = 1;
+  for (let i = 0; i < rows; i++) {
+    if (i % 2 == 0) bin = 1;
+    else bin = 0;
+    for (let j = 0; j <= i; j++) {
+      str += `${bin} `;
+      bin = 1 - bin;
     }
-    return str
+    str += "\n";
+  }
+  return str;
 }
 
 console.log(binaryNumbersRightAngledTriangle(5));
