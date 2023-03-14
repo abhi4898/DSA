@@ -1,3 +1,15 @@
+/*
+    *        *
+    **      **
+    ***    ***
+    ****  ****
+    **********
+    ****  ****
+    ***    ***
+    **      **
+    *        *
+*/
+
 function invertedPyramidAndMirror(rows) {
   let str = "";
 
