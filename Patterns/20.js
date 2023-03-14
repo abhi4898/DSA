@@ -49,3 +49,4 @@ function invertedPyramidAndMirror(rows) {
 }
 
 console.log(invertedPyramidAndMirror(5));
+
