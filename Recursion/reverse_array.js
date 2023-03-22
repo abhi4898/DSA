@@ -3,6 +3,7 @@ function reverseArrayRec(fp, bp) {
     return;
   }
 
+  // [arr[left],arr[right]] = [arr[right],arr[left]]
   temp = a[fp];
   a[fp] = a[bp];
   a[bp] = temp;
