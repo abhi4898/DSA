@@ -52,3 +52,53 @@ console.log(mergeSort(a));
 // let a = "abih";
 // let result = mergeSort(a);
 // console.log(result.join(""));
+
+/*********************** solution 2 ***********************************/
+
+function merge(arr, low, mid, high) {
+  let temp = [];
+  let left = low;
+  let right = mid + 1;
+
+  // adding elements to the temp in sorted order
+  while (left <= mid && right <= high) {
+    if (arr[left] <= arr[right]) {
+      temp.push(arr[left]);
+      left++;
+    } else {
+      temp.push(arr[right]);
+      right++;
+    }
+  }
+
+  // pushing remaining elements in left or right
+  // to the temp array
+  while (left <= mid) {
+    temp.push(arr[left]);
+    left++;
+  }
+  while (right <= high) {
+    temp.push(arr[right]);
+    right++;
+  }
+
+  // sorting the original array using temp array
+  for (let i = low; i <= high; i++) {
+    arr[i] = temp[i - low];
+  }
+}
+
+function mergeSort(arr, low, high) {
+  if (low === high) return;
+  let mid = Math.floor((low + high) / 2);
+  mergeSort(arr, low, mid);
+  mergeSort(arr, mid + 1, high);
+  merge(arr, low, mid, high);
+}
+
+(function main() {
+  let arr = [6, 2, 7, 3, 4, 8, 5];
+  let n = arr.length;
+  mergeSort(arr, 0, n - 1);
+  console.log(arr);
+})();
