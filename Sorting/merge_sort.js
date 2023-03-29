@@ -102,3 +102,68 @@ function mergeSort(arr, low, high) {
   mergeSort(arr, 0, n - 1);
   console.log(arr);
 })();
+
+/************************merge sort with user input***********************/
+function merge(arr, low, mid, high) {
+  let temp = [];
+  let left = low;
+  let right = mid + 1;
+  while (left <= mid && right <= high) {
+    if (arr[left] <= arr[right]) {
+      temp.push(arr[left]);
+      left++;
+    } else {
+      temp.push(arr[right]);
+      right++;
+    }
+  }
+
+  while (left <= mid) {
+    temp.push(arr[left]);
+    left++;
+  }
+  while (right <= high) {
+    temp.push(arr[right]);
+    right++;
+  }
+
+  for (let i = low; i <= high; i++) {
+    arr[i] = temp[i - low];
+  }
+}
+
+function mergeSort(arr, low, high) {
+  if (low == high) return;
+  let mid = Math.floor((low + high) / 2);
+  mergeSort(arr, low, mid);
+  mergeSort(arr, mid + 1, high);
+  merge(arr, low, mid, high);
+}
+
+(function getUserInput() {
+  let n = 0;
+  let c = 0;
+  let arr = [];
+  const readline = require("readline");
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+  rl.on("line", (userInput) => {
+    if (c == 0) {
+      n = userInput;
+      c++;
+    } else if (c == 1) {
+      arr = userInput.split(" ").map((ele) => +ele);
+      if (arr.length != n) {
+        console.log("Please enter correct array with given size.");
+        rl.close();
+        return;
+      }
+      mergeSort(arr, 0, n - 1);
+      console.log(arr);
+      rl.close();
+    }
+  });
+  return arr;
+})();
