@@ -165,5 +165,4 @@ function mergeSort(arr, low, high) {
       rl.close();
     }
   });
-  return arr;
 })();
