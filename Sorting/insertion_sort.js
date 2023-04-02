@@ -14,3 +14,24 @@ function insertionSort(arr, n) {
   insertionSort(arr, n);
   console.log(arr);
 })();
+
+/*****************************************************************/
+
+function recursiveInsertionSort(arr, i, n) {
+  if (i >= n) return;
+
+  let j = i;
+  while (j > 0 && arr[j - 1] > arr[j]) {
+    [arr[j - 1], arr[j]] = [arr[j], arr[j - 1]];
+    j--;
+  }
+
+  recursiveInsertionSort(arr, i + 1, n);
+}
+
+(function main() {
+  let arr = [13, 46, 24, 52, 20, 9];
+  let n = arr.length;
+  recursiveInsertionSort(arr, 1, n);
+  console.log(arr);
+})();
