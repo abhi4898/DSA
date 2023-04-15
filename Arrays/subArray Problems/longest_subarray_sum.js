@@ -49,7 +49,6 @@ function findLongestSubarraySumLen(arr, k) {
       preSumMap[sum] = i;
     }
   }
-  console.log(preSumMap);
   return maxLen;
 }
 
